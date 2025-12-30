@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!-- saved from url=(0134)file:///C:/Users/HxTos/Videos/Grava%C3%A7%C3%B5es%20de%20Tela/N4%20Modulo%2001%20Yard/N4_StrategyB_Module1_Storyboard%20(2)/index.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>N4 | Módulo 1 (Strategy B) — Storyboard de Telas</title>
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#0f172a; --panel2:#111c33; --muted:#93a4c7; --text:#e6eefc;
+      --accent:#5eead4; --accent2:#60a5fa; --border:rgba(255,255,255,.10);
+      --shadow: 0 18px 55px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:radial-gradient(1100px 600px at 15% 10%, rgba(96,165,250,.22), transparent 55%),
+                        radial-gradient(900px 540px at 90% 20%, rgba(94,234,212,.14), transparent 52%),
+                        var(--bg);
+      color:var(--text);
+      font-family: "Montserrat","Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      line-height:1.35;
+    }
+    header{
+      position:sticky; top:0; z-index:20;
+      background: linear-gradient(180deg, rgba(11,16,32,.92), rgba(11,16,32,.72));
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar{
+      display:flex; gap:14px; align-items:center; padding:16px 18px; max-width:1320px; margin:0 auto;
+    }
+    .badge{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 12px; border-radius:999px;
+      background:rgba(255,255,255,.06); border:1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    .dot{width:10px; height:10px; border-radius:99px; background:linear-gradient(135deg,var(--accent),var(--accent2));}
+    .title{font-weight:750; letter-spacing:.2px}
+    .sub{color:var(--muted); font-size:12.5px}
+    .spacer{flex:1}
+    .search{
+      width:min(380px, 44vw);
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:10px 14px;
+      color:var(--text);
+      outline:none;
+    }
+    .wrap{max-width:1320px; margin:0 auto; padding:18px}
+    .grid{display:grid; grid-template-columns: 340px 1fr; gap:18px}
+    aside{
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.05));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .aside-head{padding:16px 16px 10px 16px; border-bottom:1px solid var(--border)}
+    .aside-head h2{margin:0; font-size:14.5px; letter-spacing:.2px}
+    .aside-head p{margin:8px 0 0 0; color:var(--muted); font-size:12.5px}
+    .list{padding:10px}
+    .item{
+      display:flex; gap:10px; padding:10px 10px;
+      border-radius:14px; border:1px solid transparent;
+      cursor:pointer; user-select:none;
+      transition:transform .08s ease, background .08s ease, border-color .08s ease;
+    }
+    .item:hover{background:rgba(255,255,255,.05); transform: translateY(-1px)}
+    .item.active{background:rgba(96,165,250,.14); border-color:rgba(96,165,250,.35)}
+    .num{
+      width:28px; height:28px; border-radius:10px;
+      display:grid; place-items:center;
+      font-weight:750; font-size:12.5px;
+      background:rgba(255,255,255,.06); border:1px solid var(--border);
+    }
+    .meta{display:flex; flex-direction:column; gap:3px}
+    .meta .t{font-weight:700; font-size:13.5px}
+    .meta .s{color:var(--muted); font-size:12px}
+    main{
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .main-head{padding:18px; border-bottom:1px solid var(--border)}
+    .main-head h1{margin:0; font-size:18px; letter-spacing:.2px}
+    .main-head .ref{margin-top:6px; color:var(--muted); font-size:12.5px}
+    .content{display:grid; grid-template-columns: 1.2fr .8fr; gap:0}
+    .viewer{
+      padding:18px; border-right:1px solid var(--border);
+      background:rgba(0,0,0,.08);
+    }
+    .frame{
+      border-radius:16px; overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.03);
+    }
+    .frame img{display:block; width:100%; height:auto}
+    .caption{padding:12px 2px 0 2px; color:var(--muted); font-size:12.5px}
+    .steps{padding:18px}
+    .steps h3{margin:0 0 10px 0; font-size:14.5px}
+    .chiprow{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px}
+    .chip{
+      font-size:12px; color:rgba(230,238,252,.92);
+      padding:6px 10px; border-radius:999px;
+      background:rgba(94,234,212,.10);
+      border:1px solid rgba(94,234,212,.20);
+    }
+    ol{margin:0; padding-left:18px}
+    li{margin:8px 0; color:rgba(230,238,252,.92)}
+    .muted{color:var(--muted)}
+    footer{padding:14px 18px; border-top:1px solid var(--border); color:var(--muted); font-size:12px}
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 11.5px;
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      color:rgba(230,238,252,.92);
+    }
+    @media (max-width: 1060px){
+      .grid{grid-template-columns: 1fr}
+      .content{grid-template-columns: 1fr}
+      .viewer{border-right:none; border-bottom:1px solid var(--border)}
+      .search{width:100%}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="badge">
+      <span class="dot"></span>
+      <div>
+        <div class="title">Navis N4 4.0.7 — Módulo 1 (Yard Basics)</div>
+        <div class="sub">Strategy B • Storyboard de telas + roteiro de treinamento (Português)</div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <input id="q" class="search" placeholder="Buscar tela… (ex.: satellite, scan, allocation, stowage)">
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+    <aside>
+      <div class="aside-head">
+        <h2>Telas do treinamento</h2>
+        <p>Selecione um item para visualizar a tela e seguir o passo a passo operacional.</p>
+      </div>
+      <div class="list" id="list"><div class="item active"><div class="num">01</div><div class="meta"><div class="t">Resumo</div><div class="s">Resumo: formas de abrir Yard Views (Plan/Satellite/Block/Scan/Section)</div></div></div><div class="item"><div class="num">02</div><div class="meta"><div class="t">Yard Plan View</div><div class="s">Yard Plan View: visão macro do pátio</div></div></div><div class="item"><div class="num">03</div><div class="meta"><div class="t">Yard Satellite View</div><div class="s">Yard Satellite View: visão top-down e disponibilidade</div></div></div><div class="item"><div class="num">04</div><div class="meta"><div class="t">Satellite View</div><div class="s">Satellite View: menus de Time frame, View mode, Color-by, Filter</div></div></div><div class="item"><div class="num">05</div><div class="meta"><div class="t">Yard Block View</div><div class="s">Yard Block View: visão top-down de um bloco</div></div></div><div class="item"><div class="num">06</div><div class="meta"><div class="t">Yard Scan View</div><div class="s">Yard Scan View: corte transversal (small icons) e seleção por stacks</div></div></div><div class="item"><div class="num">07</div><div class="meta"><div class="t">Allocation Summary</div><div class="s">Allocation Summary: grupo, ranges, contagem, espaço e margem</div></div></div><div class="item"><div class="num">08</div><div class="meta"><div class="t">Yard Stowage Warnings</div><div class="s">Yard Stowage Warnings: identificar e corrigir erros de estiva</div></div></div></div>
+    </aside>
+
+    <main>
+      <div class="main-head">
+        <h1 id="h1">Resumo: formas de abrir Yard Views (Plan/Satellite/Block/Scan/Section)</h1>
+        <div class="ref" id="ref">Página 38 (Manual N4 4.0.7 - Part 1: Yard Basics)</div>
+      </div>
+
+      <div class="content">
+        <div class="viewer">
+          <div class="frame"><img id="img" alt="Tela do módulo" src="./N4 _ Módulo 1 (Strategy B) — Storyboard de Telas_files/01_yard_views_navigation.png"></div>
+          <div class="caption" id="cap">Imagem: Resumo: formas de abrir Yard Views (Plan/Satellite/Block/Scan/Section)</div>
+        </div>
+        <div class="steps">
+          <div class="chiprow">
+            <span class="chip">Foco: Navegação &amp; Yard Views</span>
+            <span class="chip">Dispatcher / Yard Planner</span>
+            <span class="chip muted">Sem dependências externas</span>
+          </div>
+          <h3>Roteiro passo a passo</h3>
+          <ol id="steps"><li>Objetivo: entender rapidamente como navegar entre níveis de detalhe do pátio (macro → micro).</li><li>No menu superior, use <span class="kbd">Yard</span> &gt; Plan View e <span class="kbd">Yard</span> &gt; Satellite View para visões gerais.</li><li>Para detalhar um bloco, use as ferramentas Magnifying (aumenta o nível de detalhe) e Pointer (navegação/seleção).</li><li>Atalhos típicos (variam por site/config): Double‑click em um bloco abre Block View; Shift‑click/drag abre Scan View; clique em uma pilha abre Section View.</li></ol>
+          <div style="height:12px"></div>
+          <div class="muted">
+            Dica: em sala, peça que o operador explique “o que eu vejo / o que eu decido / qual o próximo clique”.
+            Use <span class="kbd">Ctrl</span>+<span class="kbd">F</span> para localizar termos na página, além da busca acima.
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        Este storyboard usa imagens extraídas do manual e organiza o fluxo de treinamento por telas. Ajuste nomes de menus/privilégios conforme o seu site (configuração do N4/XPS).
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script>
+const DATA = {"screens": [{"id": "s01", "title": "Resumo", "subtitle": "Resumo: formas de abrir Yard Views (Plan/Satellite/Block/Scan/Section)", "img": "assets/screens/01_yard_views_navigation.png", "ref": "Página 38 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s02", "title": "Yard Plan View", "subtitle": "Yard Plan View: visão macro do pátio", "img": "assets/screens/02_yard_plan_view.png", "ref": "Página 40 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s03", "title": "Yard Satellite View", "subtitle": "Yard Satellite View: visão top-down e disponibilidade", "img": "assets/screens/03_yard_satellite_view.png", "ref": "Página 42 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s04", "title": "Satellite View", "subtitle": "Satellite View: menus de Time frame, View mode, Color-by, Filter", "img": "assets/screens/04_satellite_view_menus.png", "ref": "Página 43 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s05", "title": "Yard Block View", "subtitle": "Yard Block View: visão top-down de um bloco", "img": "assets/screens/05_yard_block_view.png", "ref": "Página 46 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s06", "title": "Yard Scan View", "subtitle": "Yard Scan View: corte transversal (small icons) e seleção por stacks", "img": "assets/screens/06_yard_scan_view.png", "ref": "Página 48 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s07", "title": "Allocation Summary", "subtitle": "Allocation Summary: grupo, ranges, contagem, espaço e margem", "img": "assets/screens/07_allocation_summary.png", "ref": "Página 73 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s08", "title": "Yard Stowage Warnings", "subtitle": "Yard Stowage Warnings: identificar e corrigir erros de estiva", "img": "assets/screens/08_yard_stowage_warnings.png", "ref": "Página 75 (Manual N4 4.0.7 - Part 1: Yard Basics)"}], "steps": {"s01": ["Objetivo: entender rapidamente como navegar entre níveis de detalhe do pátio (macro → micro).", "No menu superior, use **Yard > Plan View** e **Yard > Satellite View** para visões gerais.", "Para detalhar um bloco, use as ferramentas **Magnifying** (aumenta o nível de detalhe) e **Pointer** (navegação/seleção).", "Atalhos típicos (variam por site/config): **Double‑click** em um bloco abre Block View; **Shift‑click/drag** abre Scan View; clique em uma pilha abre Section View."], "s02": ["Abrir: **Yard > Plan View**.", "O que você vê: blocos (RTG/Straddle/Forklift/Rail), áreas de chassis, heaps (sem slot), edifícios e áreas não‑contêiner (orientação).", "Dica prática: use o **Magnifying** e passe o cursor para identificar se é **block**, **heap/list** ou **non‑container**.", "Use o Plan View para orientação e para decidir qual bloco precisa de análise detalhada (sem ‘micro’ de pilhas aqui)."], "s03": ["Abrir: **Yard > Satellite View > [Desired View]** (ex.: Yard Overview).", "Use para: visão top‑down do pátio, noção de **espaço livre** e **alocações** por blocos/seções.", "Importante: normalmente **não** se planeja contêiner direto na Satellite View; abra Scan/Section a partir de um bloco.", "Se o menu Satellite View não aparecer, verifique privilégios (ex.: **EDTSAT**) e se o site tem múltiplas views configuradas."], "s04": ["Na janela de Satellite View, use os pop‑ups para controlar o que é exibido.", "**Time frame**: current/future/imminent/composite (o default pode ser *Future*).", "**View mode**: Containers, Yard Allocation, Stack Status, CHE Range, Hazardous, Set‑up (depende da configuração).", "**Color‑by**: colore stacks por atributo (ex.: status, tamanho, serviço).", "**Filter**: aplica filtros somente nessa view (ex.: ver apenas 40’ reefers de um carrier)."], "s05": ["Abrir: a partir do Plan ou Satellite, clique no bloco com **Magnifying** (ou double‑click com Pointer, conforme configuração).", "Use para: visualizar stacks coloridos/sombreados, conferir **alocações**, **CHE ranges**, **restrições de stack**, e abrir views mais detalhadas.", "Para planejamento manual de posição, normalmente você precisa abrir **Scan View** ou **Section View**.", "Se ao tentar abrir você receber uma lista em vez de um bloco, pode ser um **heap** (área sem slots)."], "s06": ["Abrir a partir de Block ou Satellite: selecione **Magnifying**, arraste uma seleção (marquee) sobre as stacks desejadas e solte.", "Use para: ver seção/‘cross‑section’ com **small icons**, ajustar/inspecionar **allocation ranges**, selecionar e planejar contêineres (individualmente ou em grupo).", "Recursos comuns: pop‑ups de display (timeframe, color, icon format), pop‑ups de informação de slot/contêiner.", "Do Scan View você pode abrir **Section View** para ícones maiores e mais detalhe por pilha."], "s07": ["Abrir: a partir de uma **container list**/recap (ex.: lista de um serviço) use a opção de **Allocation Summary** (conforme menu/contexto do seu site).", "Leia os campos: **Group**, **Range(s)**, **Count**, **Plan**, **Space** e **Margin**.", "Margem negativa indica falta de slots; ranges com ‘***’ precisam de capacidade.", "Use o summary para decidir: expandir ranges existentes, criar/ativar grupo (ex.: HAZ), criar filtros para casos como High Cube."], "s08": ["Abrir para o pátio inteiro: **Yard > Check Yard Stowage**.", "Para parte do pátio: abra Satellite/Block, selecione uma área (drag) e execute **Yard > Check Yard Stowage**.", "A lista mostra: descrição do erro, timeframe, posição do erro e atributos úteis (IMO, tipo, posição original/atual/planejada).", "Ações comuns: double‑click em um warning para abrir a view da posição; corrigir alocações e depois **Planning > Assign Position** ou reposicionar manualmente."]}};
+
+const listEl = document.getElementById('list');
+const qEl = document.getElementById('q');
+const h1 = document.getElementById('h1');
+const ref = document.getElementById('ref');
+const img = document.getElementById('img');
+const cap = document.getElementById('cap');
+const stepsEl = document.getElementById('steps');
+
+let current = null;
+
+function renderList(filter=""){
+  listEl.innerHTML = "";
+  const f = filter.trim().toLowerCase();
+  DATA.screens.forEach((s, idx) => {
+    const blob = (s.title + " " + s.subtitle + " " + s.ref).toLowerCase();
+    if (f && !blob.includes(f)) return;
+
+    const item = document.createElement('div');
+    item.className = "item" + (current?.id === s.id ? " active" : "");
+    item.onclick = () => select(s.id);
+
+    const num = document.createElement('div');
+    num.className = "num";
+    num.textContent = String(idx+1).padStart(2,"0");
+
+    const meta = document.createElement('div');
+    meta.className = "meta";
+
+    const t = document.createElement('div');
+    t.className = "t";
+    t.textContent = s.title;
+
+    const sub = document.createElement('div');
+    sub.className = "s";
+    sub.textContent = s.subtitle;
+
+    meta.appendChild(t);
+    meta.appendChild(sub);
+
+    item.appendChild(num);
+    item.appendChild(meta);
+
+    listEl.appendChild(item);
+  });
+}
+
+function select(id){
+  const s = DATA.screens.find(x => x.id === id);
+  if(!s) return;
+  current = s;
+
+  // update active state
+  [...document.querySelectorAll('.item')].forEach(el => el.classList.remove('active'));
+  // re-render list to keep active state consistent after filtering
+  renderList(qEl.value);
+
+  h1.textContent = s.subtitle;
+  ref.textContent = s.ref;
+  img.src = s.img;
+  cap.textContent = "Imagem: " + s.subtitle;
+
+  const steps = (DATA.steps[id] || []).slice();
+  stepsEl.innerHTML = "";
+  steps.forEach(line => {
+    const li = document.createElement('li');
+    li.innerHTML = line
+      .replaceAll("**","") // minimal markdown-like bold removal (we'll use plain text emphasis via CSS if needed)
+      .replaceAll("Yard >","<span class='kbd'>Yard</span> &gt;")
+      .replaceAll("Planning >","<span class='kbd'>Planning</span> &gt;")
+      .replaceAll("Check Yard Stowage","<span class='kbd'>Check Yard Stowage</span>");
+    stepsEl.appendChild(li);
+  });
+}
+
+qEl.addEventListener('input', (e) => {
+  renderList(qEl.value);
+});
+
+renderList("");
+select(DATA.screens[0].id);
+</script>
+
+
+</body></html>
