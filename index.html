@@ -1,278 +1,724 @@
 <!DOCTYPE html>
-<!-- saved from url=(0134)file:///C:/Users/HxTos/Videos/Grava%C3%A7%C3%B5es%20de%20Tela/N4%20Modulo%2001%20Yard/N4_StrategyB_Module1_Storyboard%20(2)/index.html -->
+<!-- saved from url=(0068)file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#contexto -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>N4 | Módulo 1 (Strategy B) — Storyboard de Telas</title>
+  <title>Treinamento — Navis N4 XPS (Yard Basics) — Resumo Interativo</title>
   <style>
     :root{
-      --bg:#0b1020; --panel:#0f172a; --panel2:#111c33; --muted:#93a4c7; --text:#e6eefc;
-      --accent:#5eead4; --accent2:#60a5fa; --border:rgba(255,255,255,.10);
-      --shadow: 0 18px 55px rgba(0,0,0,.45);
-      --radius:18px;
+      --bg:#0e1116;
+      --panel:#131924;
+      --panel2:#0f1520;
+      --text:#e7ecf3;
+      --muted:#a9b4c7;
+      --accent:#63b3ff;
+      --accent2:#7cf5c7;
+      --warn:#ffcc66;
+      --danger:#ff6b6b;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
     *{box-sizing:border-box}
     body{
-      margin:0; background:radial-gradient(1100px 600px at 15% 10%, rgba(96,165,250,.22), transparent 55%),
-                        radial-gradient(900px 540px at 90% 20%, rgba(94,234,212,.14), transparent 52%),
-                        var(--bg);
+      margin:0;
+      font-family:var(--sans);
+      background: radial-gradient(1000px 600px at 20% -10%, rgba(99,179,255,.16), transparent 60%),
+                  radial-gradient(900px 500px at 110% 20%, rgba(124,245,199,.10), transparent 55%),
+                  var(--bg);
       color:var(--text);
-      font-family: "Montserrat","Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      line-height:1.35;
+      line-height:1.5;
     }
-    header{
-      position:sticky; top:0; z-index:20;
-      background: linear-gradient(180deg, rgba(11,16,32,.92), rgba(11,16,32,.72));
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--border);
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .app{
+      display:grid;
+      grid-template-columns: 330px 1fr;
+      min-height:100vh;
     }
-    .topbar{
-      display:flex; gap:14px; align-items:center; padding:16px 18px; max-width:1320px; margin:0 auto;
+    @media (max-width: 980px){
+      .app{grid-template-columns:1fr}
+      .sidebar{position:sticky; top:0; z-index:10}
     }
-    .badge{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:10px 12px; border-radius:999px;
-      background:rgba(255,255,255,.06); border:1px solid var(--border);
-      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    .sidebar{
+      background: linear-gradient(180deg, rgba(19,25,36,.95), rgba(15,21,32,.85));
+      border-right:1px solid var(--border);
+      padding:18px 16px;
+      box-shadow: var(--shadow);
     }
-    .dot{width:10px; height:10px; border-radius:99px; background:linear-gradient(135deg,var(--accent),var(--accent2));}
-    .title{font-weight:750; letter-spacing:.2px}
-    .sub{color:var(--muted); font-size:12.5px}
-    .spacer{flex:1}
-    .search{
-      width:min(380px, 44vw);
-      background:rgba(255,255,255,.06);
+    .brand{
+      display:flex; gap:12px; align-items:center;
+      padding:10px 12px;
       border:1px solid var(--border);
-      border-radius:999px;
-      padding:10px 14px;
+      border-radius: var(--radius);
+      background: rgba(0,0,0,.15);
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: conic-gradient(from 180deg, var(--accent), var(--accent2));
+      filter: drop-shadow(0 8px 18px rgba(99,179,255,.25));
+    }
+    .brand h1{
+      font-size:14px; margin:0; letter-spacing:.2px;
+    }
+    .brand p{
+      margin:2px 0 0 0; font-size:12px; color:var(--muted);
+    }
+    .search{
+      margin:14px 0 10px;
+      display:flex; gap:8px; align-items:center;
+    }
+    .search input{
+      width:100%;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.18);
       color:var(--text);
       outline:none;
     }
-    .wrap{max-width:1320px; margin:0 auto; padding:18px}
-    .grid{display:grid; grid-template-columns: 340px 1fr; gap:18px}
-    aside{
-      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.05));
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
       border:1px solid var(--border);
-      border-radius:var(--radius);
+      background: rgba(255,255,255,.04);
+      font-size:12px;
+      color:var(--muted);
+      user-select:none;
+    }
+    .toc{
+      margin-top:10px;
+      border:1px solid var(--border);
+      border-radius: var(--radius);
       overflow:hidden;
+      background: rgba(0,0,0,.12);
+    }
+    .toc .toc-h{
+      padding:12px 12px;
+      display:flex; justify-content:space-between; align-items:center;
+      border-bottom:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      font-size:12px; color:var(--muted);
+    }
+    .toc ul{list-style:none; padding:6px; margin:0; max-height: 56vh; overflow:auto}
+    .toc a{
+      display:block;
+      padding:10px 10px;
+      border-radius:12px;
+      color:var(--text);
+      border:1px solid transparent;
+    }
+    .toc a small{color:var(--muted)}
+    .toc a:hover{
+      background: rgba(99,179,255,.08);
+      border-color: rgba(99,179,255,.22);
+      text-decoration:none;
+    }
+    .meta{
+      margin-top:12px;
+      display:grid;
+      gap:10px;
+    }
+    .note{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:12px 12px;
+      background: rgba(0,0,0,.14);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .note strong{color:var(--text)}
+    .content{
+      padding:26px 26px 60px;
+      max-width: 1100px;
+      margin:0 auto;
+    }
+    .hero{
+      display:grid;
+      gap:14px;
+      padding:18px 18px;
+      border-radius: calc(var(--radius) + 4px);
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.10));
       box-shadow: var(--shadow);
     }
-    .aside-head{padding:16px 16px 10px 16px; border-bottom:1px solid var(--border)}
-    .aside-head h2{margin:0; font-size:14.5px; letter-spacing:.2px}
-    .aside-head p{margin:8px 0 0 0; color:var(--muted); font-size:12.5px}
-    .list{padding:10px}
-    .item{
-      display:flex; gap:10px; padding:10px 10px;
-      border-radius:14px; border:1px solid transparent;
-      cursor:pointer; user-select:none;
-      transition:transform .08s ease, background .08s ease, border-color .08s ease;
-    }
-    .item:hover{background:rgba(255,255,255,.05); transform: translateY(-1px)}
-    .item.active{background:rgba(96,165,250,.14); border-color:rgba(96,165,250,.35)}
-    .num{
-      width:28px; height:28px; border-radius:10px;
-      display:grid; place-items:center;
-      font-weight:750; font-size:12.5px;
-      background:rgba(255,255,255,.06); border:1px solid var(--border);
-    }
-    .meta{display:flex; flex-direction:column; gap:3px}
-    .meta .t{font-weight:700; font-size:13.5px}
-    .meta .s{color:var(--muted); font-size:12px}
-    main{
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+    .hero h2{margin:0; font-size:22px; letter-spacing:.2px}
+    .hero p{margin:0; color:var(--muted)}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px}
+    .badge{
+      padding:7px 10px;
+      border-radius:999px;
       border:1px solid var(--border);
-      border-radius:var(--radius);
+      background: rgba(255,255,255,.04);
+      font-size:12px;
+      color:var(--text);
+    }
+    section.card{
+      margin-top:18px;
+      padding:18px 18px;
+      border-radius: calc(var(--radius) + 4px);
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.14);
       box-shadow: var(--shadow);
-      overflow:hidden;
     }
-    .main-head{padding:18px; border-bottom:1px solid var(--border)}
-    .main-head h1{margin:0; font-size:18px; letter-spacing:.2px}
-    .main-head .ref{margin-top:6px; color:var(--muted); font-size:12.5px}
-    .content{display:grid; grid-template-columns: 1.2fr .8fr; gap:0}
-    .viewer{
-      padding:18px; border-right:1px solid var(--border);
-      background:rgba(0,0,0,.08);
+    section.card h3{margin:0 0 8px; font-size:18px}
+    .kgrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:12px;
     }
-    .frame{
-      border-radius:16px; overflow:hidden;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
-    }
-    .frame img{display:block; width:100%; height:auto}
-    .caption{padding:12px 2px 0 2px; color:var(--muted); font-size:12.5px}
-    .steps{padding:18px}
-    .steps h3{margin:0 0 10px 0; font-size:14.5px}
-    .chiprow{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px}
-    .chip{
-      font-size:12px; color:rgba(230,238,252,.92);
-      padding:6px 10px; border-radius:999px;
-      background:rgba(94,234,212,.10);
-      border:1px solid rgba(94,234,212,.20);
-    }
-    ol{margin:0; padding-left:18px}
-    li{margin:8px 0; color:rgba(230,238,252,.92)}
-    .muted{color:var(--muted)}
-    footer{padding:14px 18px; border-top:1px solid var(--border); color:var(--muted); font-size:12px}
-    .kbd{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 11.5px;
-      padding:2px 6px;
-      border-radius:8px;
+    @media(max-width: 900px){ .kgrid{grid-template-columns: 1fr} }
+    .kpi{
       border:1px solid var(--border);
-      background:rgba(255,255,255,.05);
-      color:rgba(230,238,252,.92);
+      border-radius: var(--radius);
+      padding:12px 12px;
+      background: rgba(255,255,255,.03);
     }
-    @media (max-width: 1060px){
-      .grid{grid-template-columns: 1fr}
-      .content{grid-template-columns: 1fr}
-      .viewer{border-right:none; border-bottom:1px solid var(--border)}
-      .search{width:100%}
+    .kpi .t{font-size:12px; color:var(--muted)}
+    .kpi .v{margin-top:6px; font-size:14px}
+    .callout{
+      margin-top:12px;
+      border-left:4px solid var(--accent);
+      padding:10px 12px;
+      border-radius: 12px;
+      background: rgba(99,179,255,.08);
+      color: var(--text);
+    }
+    .callout.warn{border-left-color: var(--warn); background: rgba(255,204,102,.08)}
+    .callout.danger{border-left-color: var(--danger); background: rgba(255,107,107,.08)}
+    .steps{
+      margin:10px 0 0;
+      padding-left: 18px;
+    }
+    .steps li{margin: 8px 0}
+    .ui{
+      margin-top:12px;
+      padding:12px 12px;
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(0,0,0,.18);
+      font-family: var(--mono);
+      font-size:12px;
+      color: #d7e5ff;
+      overflow:auto;
+    }
+    details{
+      margin-top:12px;
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+      padding:10px 12px;
+    }
+    details summary{
+      cursor:pointer;
+      font-weight:600;
+    }
+    .two{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:14px;
+      margin-top:12px;
+    }
+    @media(max-width: 900px){ .two{grid-template-columns:1fr} }
+    .diagram{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(0,0,0,.18);
+      padding:12px;
+      overflow:auto;
+    }
+    .quiz{
+      display:grid;
+      gap:10px;
+      margin-top:12px;
+    }
+    .q{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:12px;
+      background: rgba(0,0,0,.18);
+    }
+    .q label{display:block; margin-top:8px; color:var(--muted); font-size:12px}
+    .q input[type="text"]{
+      width:100%;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      outline:none;
+    }
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    button{
+      cursor:pointer;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(99,179,255,.12);
+      color:var(--text);
+      font-weight:600;
+    }
+    button.secondary{background: rgba(255,255,255,.06)}
+    .result{
+      margin-top:10px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    @media print{
+      :root{--bg:#fff; --text:#111; --muted:#444; --panel:#fff; --panel2:#fff; --border:#ddd}
+      body{background:#fff; color:#111}
+      .app{grid-template-columns:1fr}
+      .sidebar{display:none}
+      section.card, .hero{box-shadow:none}
+      a{color:#0b57d0}
     }
   </style>
 </head>
 <body>
-<header>
-  <div class="topbar">
-    <div class="badge">
-      <span class="dot"></span>
-      <div>
-        <div class="title">Navis N4 4.0.7 — Módulo 1 (Yard Basics)</div>
-        <div class="sub">Strategy B • Storyboard de telas + roteiro de treinamento (Português)</div>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Treinamento — Navis N4 XPS</h1>
+          <p>Yard Basics • Yard Planning (resumo reescrito)</p>
+        </div>
       </div>
-    </div>
-    <div class="spacer"></div>
-    <input id="q" class="search" placeholder="Buscar tela… (ex.: satellite, scan, allocation, stowage)">
-  </div>
-</header>
 
-<div class="wrap">
-  <div class="grid">
-    <aside>
-      <div class="aside-head">
-        <h2>Telas do treinamento</h2>
-        <p>Selecione um item para visualizar a tela e seguir o passo a passo operacional.</p>
+      <div class="search">
+        <input id="filter" placeholder="Filtrar tópicos… (ex: allocation, range, work queue)">
       </div>
-      <div class="list" id="list"><div class="item active"><div class="num">01</div><div class="meta"><div class="t">Resumo</div><div class="s">Resumo: formas de abrir Yard Views (Plan/Satellite/Block/Scan/Section)</div></div></div><div class="item"><div class="num">02</div><div class="meta"><div class="t">Yard Plan View</div><div class="s">Yard Plan View: visão macro do pátio</div></div></div><div class="item"><div class="num">03</div><div class="meta"><div class="t">Yard Satellite View</div><div class="s">Yard Satellite View: visão top-down e disponibilidade</div></div></div><div class="item"><div class="num">04</div><div class="meta"><div class="t">Satellite View</div><div class="s">Satellite View: menus de Time frame, View mode, Color-by, Filter</div></div></div><div class="item"><div class="num">05</div><div class="meta"><div class="t">Yard Block View</div><div class="s">Yard Block View: visão top-down de um bloco</div></div></div><div class="item"><div class="num">06</div><div class="meta"><div class="t">Yard Scan View</div><div class="s">Yard Scan View: corte transversal (small icons) e seleção por stacks</div></div></div><div class="item"><div class="num">07</div><div class="meta"><div class="t">Allocation Summary</div><div class="s">Allocation Summary: grupo, ranges, contagem, espaço e margem</div></div></div><div class="item"><div class="num">08</div><div class="meta"><div class="t">Yard Stowage Warnings</div><div class="s">Yard Stowage Warnings: identificar e corrigir erros de estiva</div></div></div></div>
+
+      <div class="pill" title="Dica: use Ctrl+F também">⌘/Ctrl + F • Busca rápida</div>
+
+      <nav class="toc" aria-label="Sumário">
+        <div class="toc-h">
+          <span>Sumário</span>
+          <span id="count">10 tópicos</span>
+        </div>
+        <ul id="tocList">
+          <li><a href="file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#contexto"><strong>1</strong> <span>O que é Yard Planning no XPS</span><br><small>Conceitos e objetivo</small></a></li>
+          <li><a href="file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#modelo"><strong>2</strong> <span>Modelo mental: Filter → Group → Range</span><br><small>Como “bate” e como aloca</small></a></li>
+          <li><a href="file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#criar-grupos"><strong>3</strong> <span>Criar Allocation Groups</span><br><small>Janela Yard Allocations</small></a></li>
+          <li><a href="file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#criar-ranges"><strong>4</strong> <span>Criar Allocation Ranges no Yard View</span><br><small>Selecionar área e “linkar”</small></a></li>
+          <li><a href="file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#prioridade"><strong>5</strong> <span>Prioridade de grupos</span><br><small>Quando o contêiner casa com mais de um</small></a></li>
+          <li><a href="file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#planejar"><strong>6</strong> <span>Planejar contêineres para o pátio</span><br><small>Automático vs manual</small></a></li>
+          <li><a href="file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#reter"><strong>7</strong> <span>Gerenciar e reter planos</span><br><small>Ground/Wheel e restrições</small></a></li>
+          <li><a href="file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#monitorar"><strong>8</strong> <span>Monitorar operações</span><br><small>Work queues e falhas de deck</small></a></li>
+          <li><a href="file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#boas-praticas"><strong>9</strong> <span>Boas práticas modernas</span><br><small>IA, métricas e governança</small></a></li>
+          <li><a href="file:///C:/Users/HxTos/Downloads/partyard1_treinamento.html#checklist"><strong>10</strong> <span>Checklist rápido (Dispatcher)</span><br><small>Rotina operacional</small></a></li>
+        </ul>
+      </nav>
+
+      <div class="meta">
+        <div class="note">
+          <strong>Importante</strong><br>
+          Este HTML é um <em>material de treinamento</em> reescrito e resumido a partir do PDF fornecido, sem reproduzir o documento original.
+        </div>
+        <div class="note">
+          <strong>Como evoluir</strong><br>
+          Você pode transformar este conteúdo em um “módulo oficial” (com avaliações, simulações e links internos do seu programa Porttech 2911).
+        </div>
+      </div>
     </aside>
 
-    <main>
-      <div class="main-head">
-        <h1 id="h1">Resumo: formas de abrir Yard Views (Plan/Satellite/Block/Scan/Section)</h1>
-        <div class="ref" id="ref">Página 38 (Manual N4 4.0.7 - Part 1: Yard Basics)</div>
-      </div>
-
-      <div class="content">
-        <div class="viewer">
-          <div class="frame"><img id="img" alt="Tela do módulo" src="./N4 _ Módulo 1 (Strategy B) — Storyboard de Telas_files/01_yard_views_navigation.png"></div>
-          <div class="caption" id="cap">Imagem: Resumo: formas de abrir Yard Views (Plan/Satellite/Block/Scan/Section)</div>
-        </div>
-        <div class="steps">
-          <div class="chiprow">
-            <span class="chip">Foco: Navegação &amp; Yard Views</span>
-            <span class="chip">Dispatcher / Yard Planner</span>
-            <span class="chip muted">Sem dependências externas</span>
-          </div>
-          <h3>Roteiro passo a passo</h3>
-          <ol id="steps"><li>Objetivo: entender rapidamente como navegar entre níveis de detalhe do pátio (macro → micro).</li><li>No menu superior, use <span class="kbd">Yard</span> &gt; Plan View e <span class="kbd">Yard</span> &gt; Satellite View para visões gerais.</li><li>Para detalhar um bloco, use as ferramentas Magnifying (aumenta o nível de detalhe) e Pointer (navegação/seleção).</li><li>Atalhos típicos (variam por site/config): Double‑click em um bloco abre Block View; Shift‑click/drag abre Scan View; clique em uma pilha abre Section View.</li></ol>
-          <div style="height:12px"></div>
-          <div class="muted">
-            Dica: em sala, peça que o operador explique “o que eu vejo / o que eu decido / qual o próximo clique”.
-            Use <span class="kbd">Ctrl</span>+<span class="kbd">F</span> para localizar termos na página, além da busca acima.
-          </div>
+    <main class="content">
+      <div class="hero">
+        <h2>Yard Basics — Yard Planning no Navis N4 XPS</h2>
+        <p>
+          Guia prático (passo a passo) para entender e executar alocações de pátio usando o conceito
+          <strong>Allocation Filter → Allocation Group → Allocation Range</strong>, com foco em operação e controle.
+        </p>
+        <div class="badges">
+          <div class="badge">Navis N4 • XPS</div>
+          <div class="badge">Yard Planning</div>
+          <div class="badge">Dispatcher / Yard Planner</div>
+          <div class="badge">Pronto para impressão</div>
         </div>
       </div>
 
-      <footer>
-        Este storyboard usa imagens extraídas do manual e organiza o fluxo de treinamento por telas. Ajuste nomes de menus/privilégios conforme o seu site (configuração do N4/XPS).
-      </footer>
+      <section id="contexto" class="card">
+        <h3>1) O que é Yard Planning no XPS</h3>
+        <p>
+          O módulo de Yard Planning permite <strong>antecipar o fluxo</strong> de contêineres criando “regras de alocação”
+          (yard allocations). A partir dessas regras, o sistema pode:
+          <strong>atribuir posição automaticamente</strong> (quando um contêiner entra, por exemplo, no gate),
+          e manter o planejamento visível para você ajustar em tempo real.
+        </p>
+
+        <div class="kgrid">
+          <div class="kpi">
+            <div class="t">O que você ganha</div>
+            <div class="v">Menos movimentação reativa e mais “stacking by design”.</div>
+          </div>
+          <div class="kpi">
+            <div class="t">Onde aparece</div>
+            <div class="v">Janela <strong>Yard Allocations</strong> + Yard Views (block/satellite).</div>
+          </div>
+          <div class="kpi">
+            <div class="t">Papel do Dispatcher</div>
+            <div class="v">Monitorar, corrigir exceções e evitar “fail-to-deck”.</div>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          Dica operacional: pense em “alocação” como uma <strong>reserva inteligente de espaço</strong> para grupos de contêineres
+          com atributos similares (tamanho, tipo, destino, categoria, etc.).
+        </div>
+      </section>
+
+      <section id="modelo" class="card">
+        <h3>2) Modelo mental: Filter → Group → Range</h3>
+        <p>
+          O XPS normalmente separa o problema em três níveis:
+          <strong>Filter</strong> (atributos do contêiner), <strong>Group</strong> (roteamento/contexto) e <strong>Range</strong> (onde, no pátio).
+          O contêiner “casa” com um grupo e é direcionado para um range que aponta para uma área do yard.
+        </p>
+
+        <div class="two">
+          <div class="diagram" aria-label="Diagrama Filter Group Range">
+            <svg viewBox="0 0 760 360" width="100%" height="240" role="img" aria-label="Fluxo simplificado Filter Group Range">
+              <defs>
+                <lineargradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#63b3ff" stop-opacity="0.9"></stop>
+                  <stop offset="1" stop-color="#7cf5c7" stop-opacity="0.7"></stop>
+                </lineargradient>
+              </defs>
+              <rect x="18" y="18" width="724" height="324" rx="18" fill="rgba(0,0,0,.16)" stroke="rgba(255,255,255,.10)"></rect>
+              <rect x="60" y="70" width="190" height="90" rx="16" fill="rgba(99,179,255,.16)" stroke="rgba(99,179,255,.35)"></rect>
+              <text x="155" y="110" text-anchor="middle" fill="#e7ecf3" font-size="18" font-family="ui-sans-serif">Allocation Filter</text>
+              <text x="155" y="138" text-anchor="middle" fill="#a9b4c7" font-size="12" font-family="ui-sans-serif">“quais contêineres?”</text>
+
+              <rect x="285" y="70" width="190" height="90" rx="16" fill="rgba(124,245,199,.12)" stroke="rgba(124,245,199,.35)"></rect>
+              <text x="380" y="110" text-anchor="middle" fill="#e7ecf3" font-size="18" font-family="ui-sans-serif">Allocation Group</text>
+              <text x="380" y="138" text-anchor="middle" fill="#a9b4c7" font-size="12" font-family="ui-sans-serif">“para onde, por quê?”</text>
+
+              <rect x="510" y="70" width="190" height="90" rx="16" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"></rect>
+              <text x="605" y="110" text-anchor="middle" fill="#e7ecf3" font-size="18" font-family="ui-sans-serif">Allocation Range</text>
+              <text x="605" y="138" text-anchor="middle" fill="#a9b4c7" font-size="12" font-family="ui-sans-serif">“em qual área?”</text>
+
+              <path d="M250 115 L285 115" stroke="url(#g1)" stroke-width="6" stroke-linecap="round"></path>
+              <path d="M475 115 L510 115" stroke="url(#g1)" stroke-width="6" stroke-linecap="round"></path>
+
+              <rect x="130" y="210" width="500" height="92" rx="18" fill="rgba(0,0,0,.14)" stroke="rgba(255,255,255,.10)"></rect>
+              <text x="380" y="250" text-anchor="middle" fill="#e7ecf3" font-size="16" font-family="ui-sans-serif">
+                Resultado: contêiner recebe posição planejada (auto) ou sugerida (manual)
+              </text>
+              <text x="380" y="278" text-anchor="middle" fill="#a9b4c7" font-size="12" font-family="ui-sans-serif">
+                e o sistema acompanha status / exceções durante o ciclo operacional
+              </text>
+            </svg>
+          </div>
+
+          <div>
+            <div class="callout">
+              <strong>Regra prática:</strong> se você está mudando <em>atributo do contêiner</em>, mexa no Filter.
+              Se está mudando <em>rota/destino/contexto</em>, mexa no Group. Se está mudando <em>espaço físico</em>, mexa no Range.
+            </div>
+            <details>
+              <summary>Exemplo (mental) de atributos e roteamento</summary>
+              <ul class="steps">
+                <li><strong>Filter</strong>: 20’ dry / 40’ dry / reefer / IMDG / empty…</li>
+                <li><strong>Group</strong>: categoria (export/import), serviço/navio, porto de destino, etc.</li>
+               _toggle: = end
+                <li><strong>Range</strong>: bloco/stack/linhas reservadas para aquele grupo.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="criar-grupos" class="card">
+        <h3>3) Criar Allocation Groups (passo a passo)</h3>
+        <p>
+          Um <strong>Allocation Group</strong> é a combinação entre critérios de roteamento (categoria, serviço, porto, etc.)
+          e um <strong>Allocation Filter</strong> existente (que descreve o tipo de contêiner). Você cria o grupo na janela
+          <strong>Yard Allocations</strong>.
+        </p>
+
+        <div class="ui">Menu: <strong>Yard → Show Allocations</strong>  ⟶  Abre: <strong>Yard Allocations</strong></div>
+
+        <ol class="steps">
+          <li>
+            Abra <strong>Yard → Show Allocations</strong> para exibir a janela <strong>Yard Allocations</strong>.
+          </li>
+          <li>
+            No bloco de critérios, defina o <strong>roteamento</strong> (ex.: Category = Export; Vessel/Service conforme seu cenário; Port conforme destino).
+          </li>
+          <li>
+            No menu <strong>New Allocation</strong>, selecione um <strong>Allocation Filter</strong> que segregue o tipo desejado (ex.: “20’ dry non-haz”, “40’ dry”…).
+          </li>
+          <li>
+            Confirme. O sistema cria o grupo e o exibe na lista da própria janela.
+          </li>
+          <li>
+            Repita para os demais grupos necessários (mudando porto, tamanho, tipo, etc.).
+          </li>
+        </ol>
+
+        <div class="callout warn">
+          Boas práticas: mantenha nomes de filtros coerentes e padronizados (ex.: <span style="font-family:var(--mono)">20.GEN</span>, <span style="font-family:var(--mono)">40.GEN</span>),
+          porque isso acelera diagnóstico e reuso.
+        </div>
+
+        <details>
+          <summary>Como pensar em um cenário de planejamento (modelo do PDF)</summary>
+          <p style="color:var(--muted); margin:10px 0 0">
+            Um exemplo típico é separar exportação por <em>destino</em> (porto), <em>navio/serviço</em> e <em>tamanho do contêiner</em>, criando grupos distintos e reservando áreas de pátio para cada um.
+          </p>
+        </details>
+      </section>
+
+      <section id="criar-ranges" class="card">
+        <h3>4) Criar Allocation Ranges no Yard View (passo a passo)</h3>
+        <p>
+          Depois dos grupos, você cria <strong>Allocation Ranges</strong> ao selecionar uma área do pátio em uma
+          visão do XPS (<em>satellite view</em> ou <em>block view</em>) e “linkar” essa área ao grupo correto.
+          Isso materializa a reserva de espaço.
+        </p>
+
+        <div class="ui">
+          Pré-requisito: ter os <strong>Allocation Groups</strong> criados e visíveis na janela <strong>Yard Allocations</strong>.
+        </div>
+
+        <ol class="steps">
+          <li>Abra uma visão de pátio no XPS: <strong>Yard Satellite View</strong> ou <strong>Block View</strong>.</li>
+          <li>Com a ferramenta de seleção (ex.: <strong>Pointer tool</strong>), selecione a área desejada; ao soltar, a área fica destacada.</li>
+          <li>Volte à janela <strong>Yard Allocations</strong> e posicione o cursor sobre o <strong>Allocation Group</strong> correto.</li>
+          <li>Quando o cursor indicar “link”, clique para associar a área selecionada ao grupo.</li>
+          <li>Valide se o range aparece na lista (abaixo do grupo) e se a reserva é refletida nas views do yard.</li>
+        </ol>
+
+        <div class="callout">
+          <strong>Operação real:</strong> ranges podem ser “reutilizados” e ajustados conforme sazonalidade, campanhas de exportação, janelas de navio e mudanças de mix (empty/full/reefer/IMDG).
+        </div>
+      </section>
+
+      <section id="prioridade" class="card">
+        <h3>5) Prioridade de grupos (quando há múltiplos matches)</h3>
+        <p>
+          Se um contêiner atender aos critérios de <em>mais de um</em> allocation group, o XPS tende a aplicar
+          o primeiro match conforme a <strong>ordem/prioridade</strong> exibida na janela <strong>Yard Allocations</strong>.
+          Por isso, a curadoria da lista (ordem e granularidade) é parte do controle operacional.
+        </p>
+
+        <div class="callout warn">
+          Regra de ouro: coloque no topo os grupos “mais específicos” (ex.: export + serviço + porto + tipo),
+          e deixe os “genéricos” (fallback) mais abaixo.
+        </div>
+
+        <details>
+          <summary>Sintomas de prioridade mal definida</summary>
+          <ul class="steps">
+            <li>Contêineres indo para “área errada” mesmo com range correto disponível.</li>
+            <li>Aumento de retrabalho e rehandles por conflito entre campanhas.</li>
+            <li>“Fail-to-deck” em cenário que deveria ter reserva de espaço.</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="planejar" class="card">
+        <h3>6) Planejar contêineres para o pátio (automático vs manual)</h3>
+        <p>
+          Uma vez que alocações estão configuradas, o sistema pode atribuir posição automaticamente (por evento),
+          e você também pode planejar manualmente contêineres selecionados em uma view.
+        </p>
+
+        <div class="two">
+          <div>
+            <h4 style="margin:0 0 8px; font-size:14px; color:var(--muted)">Automático (por regra)</h4>
+            <ul class="steps">
+              <li>Evento chega (ex.: gate-in): o contêiner entra no escopo de matching.</li>
+              <li>Se um group/range compatível existir e houver capacidade, o sistema define posição planejada.</li>
+              <li>O movimento passa a ser acompanhado até completar.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="margin:0 0 8px; font-size:14px; color:var(--muted)">Manual (por seleção)</h4>
+            <ul class="steps">
+              <li>Selecione o(s) contêiner(es) na view do pátio.</li>
+              <li>Execute a ação de planejamento (ex.: <strong>Planning → Assign Position</strong>).</li>
+              <li>Use ferramentas de posicionamento (ponteiro/fluxo) para alocar um a um ou em grupos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Observação:</strong> se você precisar planejar um contêiner que não casa com nenhuma alocação,
+          considere criar/ajustar um group “fallback” com range de contingência — isso reduz o número de exceções.
+        </div>
+      </section>
+
+      <section id="reter" class="card">
+        <h3>7) Gerenciar e reter planos (retenção e restrições)</h3>
+        <p>
+          Em alguns cenários, o planejamento precisa <strong>persistir</strong> mesmo quando o contêiner não completa
+          a movimentação conforme planejado (ou quando há transição entre tipos de posição, como ground/wheel).
+          O objetivo é evitar “perder o plano” e criar ambiguidade operacional.
+        </p>
+
+        <details>
+          <summary>Pontos de atenção (visão prática)</summary>
+          <ul class="steps">
+            <li>Defina claramente quando um movimento é considerado “completo” para o plano (evitar falsos positivos).</li>
+            <li>Trate de forma consistente mudanças entre “modalidades” de slot (ex.: grounded vs wheeled), se seu terminal usa ambos.</li>
+            <li>Quando necessário, restrinja certos movimentos para manter integridade do plano (ex.: evitar que um contêiner “saia do subgrupo” planejado).</li>
+          </ul>
+        </details>
+
+        <div class="callout warn">
+          Para treinamentos internos: vale criar uma matriz simples “quando manter plano / quando liberar plano”,
+          alinhada às regras do seu pátio (tipos de equipamentos, áreas, regimes aduaneiros e prioridades de gate/vessel).
+        </div>
+      </section>
+
+      <section id="monitorar" class="card">
+        <h3>8) Monitorar operações (work queues e falhas)</h3>
+        <p>
+          O acompanhamento do plano aparece em listas ordenadas de instruções (work queues). Quando o sistema não encontra
+          match (ou não há espaço no range), a operação pode cair em um bloco lógico de exceção (ex.: “fail-to-deck”),
+          e você precisa agir rapidamente para não travar o fluxo.
+        </p>
+
+        <div class="kgrid">
+          <div class="kpi">
+            <div class="t">Onde olhar</div>
+            <div class="v"><strong>Work queues</strong> e mensagens/avisos operacionais (exceções).</div>
+          </div>
+          <div class="kpi">
+            <div class="t">Causa típica</div>
+            <div class="v">Sem group/range compatível ou range sem capacidade para o mix atual.</div>
+          </div>
+          <div class="kpi">
+            <div class="t">Ação típica</div>
+            <div class="v">Ajustar range, criar contingência, revisar prioridade, ou liberar área.</div>
+          </div>
+        </div>
+
+        <div class="callout danger">
+          Anti-padrão comum: “corrigir no braço” (movendo contêiner sem corrigir regra). Isso vira dívida técnica operacional.
+          O ideal é sempre fechar o loop: <strong>exceção → diagnóstico → ajuste de alocação</strong>.
+        </div>
+      </section>
+
+      <section id="boas-praticas" class="card">
+        <h3>9) Boas práticas modernas (para estar na vanguarda)</h3>
+        <p>
+          Mesmo usando um mecanismo clássico de alocação, você pode elevar o desempenho do pátio aplicando práticas modernas
+          de observabilidade, governança e otimização.
+        </p>
+
+        <ul class="steps">
+          <li><strong>Telemetria + TOS:</strong> conecte eventos de CHE/RTG/reach stacker (status, filas, delays) para ajustar ranges de forma dinâmica.</li>
+          <li><strong>Regras como produto:</strong> trate filtros/grupos/ranges como “configuração versionada” (mudança com justificativa e janela de ativação).</li>
+          <li><strong>KPIs de qualidade de plano:</strong> % auto-assign, % rehandles por conflito de alocação, taxa de fail-to-deck, SLA de correção.</li>
+          <li><strong>IA aplicada:</strong> recomendação de ajustes de ranges e priorização, baseada em previsão de gate/vessel e perfil de permanência (dwell time).</li>
+          <li><strong>Digital Twin operacional:</strong> simule cenários de campanha (ex.: pico export/empty) antes de ativar ranges em produção.</li>
+        </ul>
+
+        <details>
+          <summary>Como transformar isso em um módulo de treinamento (Porttech 2911)</summary>
+          <ul class="steps">
+            <li>Adicionar exercícios: “crie 3 grupos e 4 ranges” (com critérios e capacidade).</li>
+            <li>Adicionar casos: “o range lotou — qual ajuste você faz primeiro?”</li>
+            <li>Adicionar avaliação: quiz de menus e diagnóstico de exceções.</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="checklist" class="card">
+        <h3>10) Checklist rápido (Dispatcher)</h3>
+        <ol class="steps">
+          <li>Antes do pico: confirme se os <strong>groups/ranges</strong> da operação do turno estão ativos e com capacidade.</li>
+          <li>Durante o pico: monitore <strong>work queues</strong>, exceções e gargalos por área/bloco.</li>
+          <li>Se aparecer falha de alocação: valide (a) match, (b) capacidade do range, (c) prioridade/ordem, (d) exceção de regra.</li>
+          <li>Após correção: registre a mudança e o motivo (governança) e, se possível, crie uma regra “anti-recorrência”.</li>
+        </ol>
+
+        <div class="quiz" aria-label="Mini-quiz">
+          <div class="q">
+            <strong>Mini-quiz (autoavaliação)</strong>
+            <label>Qual menu abre a janela de alocações?</label>
+            <input id="q1" type="text" placeholder="Ex.: Yard → …">
+            <label>Em qual etapa você “linka” a área do pátio ao grupo?</label>
+            <input id="q2" type="text" placeholder="Ex.: ao criar …">
+            <div class="btnrow">
+              <button onclick="grade()">Corrigir</button>
+              <button class="secondary" onclick="resetQuiz()">Limpar</button>
+            </div>
+            <div class="result" id="res" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <footer>
+          <p>
+            <strong>Nota de direitos autorais:</strong> este material foi reescrito para treinamento e não reproduz o conteúdo do documento original.
+            Use o PDF fornecido apenas conforme as permissões/licenças aplicáveis à sua organização.
+          </p>
+        </footer>
+      </section>
     </main>
   </div>
-</div>
 
-<script>
-const DATA = {"screens": [{"id": "s01", "title": "Resumo", "subtitle": "Resumo: formas de abrir Yard Views (Plan/Satellite/Block/Scan/Section)", "img": "assets/screens/01_yard_views_navigation.png", "ref": "Página 38 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s02", "title": "Yard Plan View", "subtitle": "Yard Plan View: visão macro do pátio", "img": "assets/screens/02_yard_plan_view.png", "ref": "Página 40 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s03", "title": "Yard Satellite View", "subtitle": "Yard Satellite View: visão top-down e disponibilidade", "img": "assets/screens/03_yard_satellite_view.png", "ref": "Página 42 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s04", "title": "Satellite View", "subtitle": "Satellite View: menus de Time frame, View mode, Color-by, Filter", "img": "assets/screens/04_satellite_view_menus.png", "ref": "Página 43 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s05", "title": "Yard Block View", "subtitle": "Yard Block View: visão top-down de um bloco", "img": "assets/screens/05_yard_block_view.png", "ref": "Página 46 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s06", "title": "Yard Scan View", "subtitle": "Yard Scan View: corte transversal (small icons) e seleção por stacks", "img": "assets/screens/06_yard_scan_view.png", "ref": "Página 48 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s07", "title": "Allocation Summary", "subtitle": "Allocation Summary: grupo, ranges, contagem, espaço e margem", "img": "assets/screens/07_allocation_summary.png", "ref": "Página 73 (Manual N4 4.0.7 - Part 1: Yard Basics)"}, {"id": "s08", "title": "Yard Stowage Warnings", "subtitle": "Yard Stowage Warnings: identificar e corrigir erros de estiva", "img": "assets/screens/08_yard_stowage_warnings.png", "ref": "Página 75 (Manual N4 4.0.7 - Part 1: Yard Basics)"}], "steps": {"s01": ["Objetivo: entender rapidamente como navegar entre níveis de detalhe do pátio (macro → micro).", "No menu superior, use **Yard > Plan View** e **Yard > Satellite View** para visões gerais.", "Para detalhar um bloco, use as ferramentas **Magnifying** (aumenta o nível de detalhe) e **Pointer** (navegação/seleção).", "Atalhos típicos (variam por site/config): **Double‑click** em um bloco abre Block View; **Shift‑click/drag** abre Scan View; clique em uma pilha abre Section View."], "s02": ["Abrir: **Yard > Plan View**.", "O que você vê: blocos (RTG/Straddle/Forklift/Rail), áreas de chassis, heaps (sem slot), edifícios e áreas não‑contêiner (orientação).", "Dica prática: use o **Magnifying** e passe o cursor para identificar se é **block**, **heap/list** ou **non‑container**.", "Use o Plan View para orientação e para decidir qual bloco precisa de análise detalhada (sem ‘micro’ de pilhas aqui)."], "s03": ["Abrir: **Yard > Satellite View > [Desired View]** (ex.: Yard Overview).", "Use para: visão top‑down do pátio, noção de **espaço livre** e **alocações** por blocos/seções.", "Importante: normalmente **não** se planeja contêiner direto na Satellite View; abra Scan/Section a partir de um bloco.", "Se o menu Satellite View não aparecer, verifique privilégios (ex.: **EDTSAT**) e se o site tem múltiplas views configuradas."], "s04": ["Na janela de Satellite View, use os pop‑ups para controlar o que é exibido.", "**Time frame**: current/future/imminent/composite (o default pode ser *Future*).", "**View mode**: Containers, Yard Allocation, Stack Status, CHE Range, Hazardous, Set‑up (depende da configuração).", "**Color‑by**: colore stacks por atributo (ex.: status, tamanho, serviço).", "**Filter**: aplica filtros somente nessa view (ex.: ver apenas 40’ reefers de um carrier)."], "s05": ["Abrir: a partir do Plan ou Satellite, clique no bloco com **Magnifying** (ou double‑click com Pointer, conforme configuração).", "Use para: visualizar stacks coloridos/sombreados, conferir **alocações**, **CHE ranges**, **restrições de stack**, e abrir views mais detalhadas.", "Para planejamento manual de posição, normalmente você precisa abrir **Scan View** ou **Section View**.", "Se ao tentar abrir você receber uma lista em vez de um bloco, pode ser um **heap** (área sem slots)."], "s06": ["Abrir a partir de Block ou Satellite: selecione **Magnifying**, arraste uma seleção (marquee) sobre as stacks desejadas e solte.", "Use para: ver seção/‘cross‑section’ com **small icons**, ajustar/inspecionar **allocation ranges**, selecionar e planejar contêineres (individualmente ou em grupo).", "Recursos comuns: pop‑ups de display (timeframe, color, icon format), pop‑ups de informação de slot/contêiner.", "Do Scan View você pode abrir **Section View** para ícones maiores e mais detalhe por pilha."], "s07": ["Abrir: a partir de uma **container list**/recap (ex.: lista de um serviço) use a opção de **Allocation Summary** (conforme menu/contexto do seu site).", "Leia os campos: **Group**, **Range(s)**, **Count**, **Plan**, **Space** e **Margin**.", "Margem negativa indica falta de slots; ranges com ‘***’ precisam de capacidade.", "Use o summary para decidir: expandir ranges existentes, criar/ativar grupo (ex.: HAZ), criar filtros para casos como High Cube."], "s08": ["Abrir para o pátio inteiro: **Yard > Check Yard Stowage**.", "Para parte do pátio: abra Satellite/Block, selecione uma área (drag) e execute **Yard > Check Yard Stowage**.", "A lista mostra: descrição do erro, timeframe, posição do erro e atributos úteis (IMO, tipo, posição original/atual/planejada).", "Ações comuns: double‑click em um warning para abrir a view da posição; corrigir alocações e depois **Planning > Assign Position** ou reposicionar manualmente."]}};
+  <script>
+    const tocList = document.getElementById('tocList');
+    const filter = document.getElementById('filter');
+    const count = document.getElementById('count');
 
-const listEl = document.getElementById('list');
-const qEl = document.getElementById('q');
-const h1 = document.getElementById('h1');
-const ref = document.getElementById('ref');
-const img = document.getElementById('img');
-const cap = document.getElementById('cap');
-const stepsEl = document.getElementById('steps');
+    function updateCount(){
+      const items = [...tocList.querySelectorAll('li')].filter(li => li.style.display !== 'none');
+      count.textContent = items.length + ' tópicos';
+    }
+    updateCount();
 
-let current = null;
+    filter.addEventListener('input', () => {
+      const q = filter.value.trim().toLowerCase();
+      [...tocList.querySelectorAll('li')].forEach(li => {
+        const text = li.innerText.toLowerCase();
+        li.style.display = (q === '' || text.includes(q)) ? '' : 'none';
+      });
+      updateCount();
+    });
 
-function renderList(filter=""){
-  listEl.innerHTML = "";
-  const f = filter.trim().toLowerCase();
-  DATA.screens.forEach((s, idx) => {
-    const blob = (s.title + " " + s.subtitle + " " + s.ref).toLowerCase();
-    if (f && !blob.includes(f)) return;
+    function normalize(s){ return (s||'').toLowerCase().replace(/\s+/g,' ').trim(); }
 
-    const item = document.createElement('div');
-    item.className = "item" + (current?.id === s.id ? " active" : "");
-    item.onclick = () => select(s.id);
+    window.grade = function(){
+      const a1 = normalize(document.getElementById('q1').value);
+      const a2 = normalize(document.getElementById('q2').value);
+      let score = 0;
+      const hints = [];
 
-    const num = document.createElement('div');
-    num.className = "num";
-    num.textContent = String(idx+1).padStart(2,"0");
+      if(a1.includes('yard') && (a1.includes('show allocations') || a1.includes('allocations'))){
+        score++;
+      } else {
+        hints.push('• Dica 1: Menu começa em "Yard" e a ação é "Show …"');
+      }
 
-    const meta = document.createElement('div');
-    meta.className = "meta";
+      if(a2.includes('range') || a2.includes('ranges') || a2.includes('link')){
+        score++;
+      } else {
+        hints.push('• Dica 2: O “link” acontece quando você cria um … a partir da seleção de área no yard view.');
+      }
 
-    const t = document.createElement('div');
-    t.className = "t";
-    t.textContent = s.title;
+      const res = document.getElementById('res');
+      res.innerHTML = `Pontuação: <strong>${score}/2</strong><br>` + (hints.length ? hints.join('<br>') : 'Perfeito — pronto para aplicar no turno.');
+    }
 
-    const sub = document.createElement('div');
-    sub.className = "s";
-    sub.textContent = s.subtitle;
-
-    meta.appendChild(t);
-    meta.appendChild(sub);
-
-    item.appendChild(num);
-    item.appendChild(meta);
-
-    listEl.appendChild(item);
-  });
-}
-
-function select(id){
-  const s = DATA.screens.find(x => x.id === id);
-  if(!s) return;
-  current = s;
-
-  // update active state
-  [...document.querySelectorAll('.item')].forEach(el => el.classList.remove('active'));
-  // re-render list to keep active state consistent after filtering
-  renderList(qEl.value);
-
-  h1.textContent = s.subtitle;
-  ref.textContent = s.ref;
-  img.src = s.img;
-  cap.textContent = "Imagem: " + s.subtitle;
-
-  const steps = (DATA.steps[id] || []).slice();
-  stepsEl.innerHTML = "";
-  steps.forEach(line => {
-    const li = document.createElement('li');
-    li.innerHTML = line
-      .replaceAll("**","") // minimal markdown-like bold removal (we'll use plain text emphasis via CSS if needed)
-      .replaceAll("Yard >","<span class='kbd'>Yard</span> &gt;")
-      .replaceAll("Planning >","<span class='kbd'>Planning</span> &gt;")
-      .replaceAll("Check Yard Stowage","<span class='kbd'>Check Yard Stowage</span>");
-    stepsEl.appendChild(li);
-  });
-}
-
-qEl.addEventListener('input', (e) => {
-  renderList(qEl.value);
-});
-
-renderList("");
-select(DATA.screens[0].id);
-</script>
+    window.resetQuiz = function(){
+      document.getElementById('q1').value = '';
+      document.getElementById('q2').value = '';
+      document.getElementById('res').textContent = '';
+    }
+  </script>
 
 
 </body></html>
